@@ -1,0 +1,9 @@
+<div class="container">
+  <h1 class="pb-3">My Tasks</h1>
+  <ul class="list-group pb-5">
+    <% @tasks.each do |task| %>
+      <li class="list-group-item py-4"><i class="far fa-check-square"></i><%= link_to task.title, task_path(task) %></li>
+    <% end %>
+  </ul>
+  <%= link_to "Create a new task", new_task_path %>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+  <h2 class="pb-5"><%= @task.title %></h2>
+  <button type="button" class="btn btn-warning mb-5"><%= link_to "Edit this task", edit_task_path %></button>
+  <div class="card bg-grey text-dark">
+    <div class="card-body"><%= @task.details %></div>
+  </div>
+  <% if @task.completed %>
+    <p class="py-5"><i class="far fa-check-square"></i>Task completed</p>
+    <%else %>
+    <p class="py-5"><i class="far fa-square"></i>Task not yet completed</p>
+  <%end %>
+
+  <button type="button" class="btn btn-danger mb-5"><%= link_to "Delete",
+            task_path(@task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></button>
+
+  <div>
+  <button type="button" class="btn btn-info mb-5"><%= link_to "Back to list", tasks_path %></button>
+  </div>
+</div>
